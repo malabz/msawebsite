@@ -34,6 +34,7 @@
 
 7. [https://doi.org/10.1093/bib/bbad190 *WMSA2*]: a multiple DNA/RNA sequence alignment tool implemented with accurate progressive mode and a fast win-win mode combining the center star and progressive strategies. *Briefings in Bioinformatics*. 2023 ([https://github.com/malabz/WMSA2/ soft])
 
+8. [https://doi.org/10.1093/gigascience/giaf163 *deMEM*]: a novel divide-and-conquer framework based on de Bruijn graph for scalable multiple sequence alignment. *GigaScience*. 2026 ([https://github.com/malabz/deMEM soft])
 == MSA post-processing
 
 1. [https://doi.org/10.1371/journal.pcbi.1011988 *TPMA*]: A two pointers meta-alignment tool to ensemble different multiple nucleic acid sequence alignments. *PLOS COMPUTATIONAL BIOLOGY*. 2024 ([https://github.com/malabz/TPMA soft])
@@ -52,7 +53,7 @@
 
 1. [https://doi.org/10.1101/gr.279763.124 Fast sequence alignment for centromere with RaMA.] *Genome Research*. 2025 ([https://github.com/metaphysicser/RaMA soft])
 
-2. [https://link.springer.com/article/10.1186/s13059-025-03881-3 HAlign-G: rapid and low-memory multiple-genome aligner for large-scale closely related genomes]. *Genome Biology*. 2025 ([https://github.com/malabz/HAlign-G soft])
+2. [https://link.springer.com/article/10.1186/s13059-025-03881-3 *HAlign-G*] : rapid and low-memory multiple-genome aligner for large-scale closely related genomes. *Genome Biology*. 2025 ([https://github.com/malabz/HAlign-G soft])
 
 == Review
 
