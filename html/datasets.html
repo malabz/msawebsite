@@ -322,7 +322,35 @@ MathJax.Hub.Config({
 <li><p>原版利用二级结构进行预测，<a href="http://bioinf.ucd.ie/quantest2.tar" target=&ldquo;blank&rdquo;>下载地址</a>
 </p>
 </li>
-<li><p>利用 Q Score 和 TC Score 进行得分计算，<a href="https://github.com/malabz/QuanTest2" target=&ldquo;blank&rdquo;>Dataset Mainpage</a></p>
+<li><p>利用 Q Score 和 TC Score 进行得分计算，<a href="https://github.com/malabz/QuanTest2" target=&ldquo;blank&rdquo;>Dataset Mainpage</a>
+</p>
+</li>
+</ul>
+<h3>Pfam(38.1) full子数据集</h3>
+<ul>
+<li><p>基于Pfam full alignment 构建的真实蛋白质家族子集，从多个Pfam家族中抽取部分成员形成测试数据。Pfam家族以多序列比对和profile HMM表示，full alignment包含更大范围的同源成员，适合构建真实场景下的MSA测试集。
+</p>
+</li>
+<li><p>蛋白质数据集，覆盖不同家族规模、序列长度和相似度水平，可用于测试比对方法在低相似、高冗余、规模变化等条件下的表现。
+</p>
+</li>
+<li><p>与BAliBASE等结构参考基准不同，该数据集强调真实家族覆盖与规模多样性，适合用于算法性能评测、参数敏感性分析以及大规模比对实验；若需参考型质量评估，可结合Pfam seed alignment或其他高可信参考集进行比较。Pfam的seed是经整理的核心对齐，full则是在profile HMM搜索基础上扩展得到的更大成员集合。
+</p>
+</li>
+<li><p>下载: <a href="http://lab.malab.cn/soft/protocol/protein/pfam_subset.7z" target=&ldquo;blank&rdquo;>pfam_subset.7z</a>
+</p>
+</li>
+</ul>
+<h3>IQ-TREE3模拟数据集</h3>
+<ul>
+<li><p>基于IQ-TREE3的AliSim模拟器构建，通过控制序列长度、叶子节点数、进化距离和替换模型等参数，生成不同难度与不同规模的模拟多序列比对数据。
+</p>
+</li>
+<li><p>数据集覆盖从低分化到高分化、从小规模到大规模、从短序列到长序列的多种场景，适合测试多序列比对算法在复杂进化条件下的准确性、稳定性与可扩展性。
+</p>
+</li>
+<li><p>下载: <a href="http://lab.malab.cn/soft/protocol/protein/iqtree_simulated.7z" target=&ldquo;blank&rdquo;>iqtree_simulated.7z</a>
+</p>
 </li>
 </ul>
 </td>
