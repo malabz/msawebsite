@@ -24,9 +24,16 @@
 
 2. [https://academic.oup.com/nargab/article/6/4/lqae170/7928182 *ReAlign-N*]: an integrated realignment approach for multiple nucleic acid sequence alignment, combining global and local realignments. *NAR Genomics and Bioinformatics*. 2024 ([https://github.com/malabz/ReAlign-N soft])
 
+3. [https://link.springer.com/chapter/10.1007/978-981-95-0030-7_38 *ReAlign-Star*]: an optimized realignment method for multiple sequence alignment, targeting star algorithm tools. *International Conference on Intelligent Computing*. 2025 ([https://github.com/malabz/ReAlign-Star soft])
+
+4. [https://academic.oup.com/bioinformatics/article/41/8/btaf421/8213638?login=false *ReAlign-P*]: a vertical iterative realignment method for protein multiple sequence alignment. *Bioinformatics*. 2025 ([https://github.com/malabz/ReAlign-P soft])
+
+
 == MGA
 
 1. [https://doi.org/10.1101/gr.279763.124 Fast sequence alignment for centromere with RaMA]. *Genome Research*. 2025 ([https://github.com/metaphysicser/RaMA soft])
+
+2. [https://link.springer.com/article/10.1186/s13059-025-03881-3 *HAlign-G*] : rapid and low-memory multiple-genome aligner for large-scale closely related genomes. *Genome Biology*. 2025 ([https://github.com/malabz/HAlign-G soft])
 
 == PSA
 
@@ -38,6 +45,8 @@
 1. [https://www.mdpi.com/2218-273X/12/4/546 Developments in Algorithms for Sequence Alignment]: A Review. *Biomolecules*. 2022
 
 2. [https://doi.org/10.1093/bib/bbac069 A survey on the algorithm and development of multiple sequence alignment]. *Briefings in Bioinformatics*. 2022
+
+3. [https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2025.1722317/full Advances in post-processing methods for multiple sequence alignment.] *Frontiers in Genetics*. 2025
 
 
 == 其他论文
@@ -61,3 +70,5 @@
 9. [https://doi.org/10.1093/bioinformatics/btac658 *WMSA*]: a novel method for multiple sequence alignment of DNA sequences. *Bioinformatics*. 2022 ([https://github.com/malabz/WMSA/ soft])
 
 10. [https://doi.org/10.1093/bib/bbad190 *WMSA2*]: a multiple DNA/RNA sequence alignment tool implemented with accurate progressive mode and a fast win-win mode combining the center star and progressive strategies. *Briefings in Bioinformatics*. 2023 ([https://github.com/malabz/WMSA2/ soft])
+
+11. [https://doi.org/10.1093/gigascience/giaf163 *deMEM*]: a novel divide-and-conquer framework based on de Bruijn graph for scalable multiple sequence alignment. *GigaScience*. 2026 ([https://github.com/malabz/deMEM soft])
