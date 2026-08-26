@@ -14,7 +14,7 @@
 
 数据集推荐:适合序列数量少，但单条序列长度很长，且整体相似度较高的数据集。
 
-4. [https://www.biorxiv.org/content/10.64898/2026.02.18.706716v1 *minipoa*]: A minimizer-based method for fast and memory-efficient partial order alignment. *biorixv*. 2026 ([https://github.com/NCl3-lhd/minipoa soft])
+4. [https://genome.cshlp.org/content/early/2026/07/23/gr282046126 *minipoa*]: Fast and memory efficient partial order alignment with minipoa. *Genome Research*. 2026 ([https://github.com/NCl3-lhd/minipoa soft])
 
 数据集推荐:适合序列数量中等，序列长度长，且整体相似度在中等以上的数据集。
 
