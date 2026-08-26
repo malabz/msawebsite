@@ -50,6 +50,48 @@ MathJax.Hub.Config({
 <h3>用法：</h3>
 <p><a href="https://github.com/metaphysicser/klib/tree/main/klib" target=&ldquo;blank&rdquo;>klib文件夹</a>存放修改后的klib代码，<a href="https://github.com/metaphysicser/klib/tree/main/docs" target=&ldquo;blank&rdquo;>docs文件夹</a>存放常用头文件的教程，如kvec.h, kseq.h, kthread.h等。
 </p>
+<h2>Sufkit 后缀索引库</h2>
+<h3>简介：</h3>
+<p>Sufkit 是一个面向基因组序列的 C<tt></tt>17 后缀索引库和命令行工具，集成了后缀数组、压缩后缀数组（FM-index）以及多种精确匹配算法，可用于基因组索引构建、模式搜索以及 MEM 等匹配片段的查找。
+</p>
+<p>Sufkit 对常用的后缀索引相关算法进行了统一封装，同时支持普通程序调用和 CMake 库集成，适合用于序列比对、基因组搜索以及相关算法的开发和实验。
+</p>
+<p>特点:
+</p>
+<p>1. 支持 divsufsort 和 CaPS-SA 两种后缀数组构造方式，其中 CaPS-SA 支持共享内存并行构建，并提供 32 位和 64 位版本
+</p>
+<p>2. 支持基于 SDSL 的 Huffman、balanced 和 DNA EPR 等多种压缩后缀数组（FM-index）实现，可根据索引大小和查询速度选择不同的数据结构
+</p>
+<p>3. 支持 exact count、locate 等精确模式匹配，并提供 ISA、LCP、CHILD、suffix-link 等结构辅助的匹配算法
+</p>
+<p>4. 支持 MEM（Maximal Exact Match）和 reference-MAM 等极大精确匹配搜索，可用于序列比对和同源区域查找等任务
+</p>
+<p>5. 支持 FASTA/FASTA.gz、多 contig、正向和反向互补序列查询，并可以将构建完成的索引保存为带版本和 CRC 校验的 &lsquo;.sufidx&lsquo; 文件
+</p>
+<h3>项目地址</h3>
+<p><a href="https://github.com/malabz/sufkit" target=&ldquo;blank&rdquo;>项目路径</a>
+</p>
+<h2>SeqPro FASTA 随机访问库</h2>
+<h3>简介：</h3>
+<p>SeqPro 是一个使用 C<tt></tt>17 开发的 FASTA 索引随机访问库，主要用于快速访问大型未压缩 FASTA 文件中的指定序列或区间。SeqPro 使用标准 FAI 索引记录序列位置，并通过 mmap 将 FASTA 文件映射到虚拟内存，因此无需将完整基因组序列加载到内存中。
+</p>
+<p>对于大型参考基因组，SeqPro 打开已有索引时的内存开销主要与 FASTA 中的序列记录数量和名称长度有关，而不是与基因组总碱基数直接相关。因此，该库适合需要频繁随机读取大型参考序列的生物信息学程序。
+</p>
+<p>特点:
+</p>
+<p>1. 支持创建和读取与 Samtools/HTSlib 兼容的标准五列 FAI 索引，可以直接使用已有的合法 FAI 文件
+</p>
+<p>2. 使用只读 mmap 访问 FASTA 文件，支持单碱基、子序列以及大区间的按需读取，避免将完整序列复制到堆内存中
+</p>
+<p>3. 支持直接获取指向 mmap 数据的连续 sequence chunk，可减少大规模序列读取过程中的额外内存复制
+</p>
+<p>4. 提供独立的 SequenceTextLayout 可选组件，可以将多个序列或指定区间组织为适合后缀数组和 FM-index 构建的输入文本，并提供相应的坐标转换功能
+</p>
+<p>5. 索引打开后的主要查询对象为只读结构，支持无锁并发查询，适合作为大型基因组分析和索引算法的底层序列访问模块
+</p>
+<h3>项目地址</h3>
+<p><a href="https://github.com/malabz/seqpro" target=&ldquo;blank&rdquo;>项目路径</a>
+</p>
 <h2>基于四俄国人思想的双序列比对算法模块</h2>
 <h3>简介：</h3>
 <p>基于四俄国人思想的双序列比对算法是一种并行求解双序列比对的算法，对<a href="http://lab.malab.cn/~cjt/MSA/psa.html" target=&ldquo;blank&rdquo;>分治法-线性空间改进算法</a>进行进一步的并行化，减少了计算量。
@@ -66,33 +108,6 @@ MathJax.Hub.Config({
 </p>
 <h3>文献引用：</h3>
 <p>Wei, Y., Zhou, T., Zhai, Y., Yu, L., &amp; Zou, Q. (2025). FORAlign: accelerating gap-affine DNA pairwise sequence alignment using FOR-blocks based on Four Russians approach with linear space complexity. Briefings in Bioinformatics, 26(1), bbaf061.
-</p>
-<h2>并行后缀数组</h2>
-<h3>简介：</h3>
-<p>部分后缀数组方法（如 DC3 等）采用基数排序完成，由于基数排序并行较为容易，因此有一些开发并行基数排序以实现并行后缀数组的方法。本项目进行了部分整理。
-</p>
-<p>注意：由于 Cilk 已经被 <a href="https://gcc.gnu.org/gcc-7/changes.html" target=&ldquo;blank&rdquo;>gcc-7</a> 弃用，因此采用 OpenMP 进行并行，代码中对于 OpenMP 的支持不足。
-</p>
-<h3>用法：</h3>
-<p>参考 <a href="https://github.com/malabz/parallel-suffixArray#usage" target=&ldquo;blank&rdquo;>usage</a>
-</p>
-<h3>项目地址</h3>
-<p><a href="https://github.com/malabz/parallel-suffixArray" target=&ldquo;blank&rdquo;>项目路径</a>
-</p>
-<h2>FM-index</h2>
-<h3>简介：</h3>
-<p>FM-index 是一种基于 Burrows-Wheeler 变换（BWT）的压缩全文索引结构，广泛应用于生物信息学中的序列比对任务。它兼具压缩性与高效查询性能，能够在不解压原始数据的情况下完成快速的子串搜索。本模块实现了一个基础的 FM-index，旨在为开发人员在构建比对算法或处理大规模基因序列数据时提供参考与帮助。该实现具有较强的可读性和扩展性，适合用于学习、研究或作为更复杂系统的构建基础。
-</p>
-<p>特点:
-</p>
-<p>1. 给出<a href="https://github.com/y-256/libdivsufsort" target=&ldquo;blank&rdquo;>divsufsort</a>, <a href="https://github.com/alshai/Big-BWT" target=&ldquo;blank&rdquo;>Big-BWT</a>和<a href="https://github.com/jamshed/CaPS-SA" target=&ldquo;blank&rdquo;>CaPS-SA</a>三种后缀数组构造方式，适用于不同大小的数据集
-</p>
-<p>2. 使用<a href="https://github.com/simongog/sdsl-lite" target=&ldquo;blank&rdquo;>sdsl</a>的基于哈夫曼编码的小波树存储BWT，支持快速的rank和select操作
-</p>
-<p>3. 给出三种模式的模式匹配函数，支持不同灵敏度的搜索
-</p>
-<h3>项目地址</h3>
-<p>仍在开发测试中
 </p>
 </td>
 </tr>
